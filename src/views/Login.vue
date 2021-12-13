@@ -6,12 +6,21 @@
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
         <ion-img :src="logo" class="logo"></ion-img>
-        <div class="button">
-        <ion-button size="large" expand="full" fill="outline">Landlord</ion-button>
-        </div>
-        <div class="button2">
-        <ion-button size="large" expand="full" fill="outline">Student</ion-button>
-        </div>
+
+        <ion-card>
+          <ion-item>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input type="username"></ion-input>
+          </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+        </ion-card>
+
+        <ion-button expand="block" class="buttonlogin" shape="round">Login</ion-button>
       </div>
     </ion-content>
   </ion-page>
@@ -35,20 +44,19 @@ export default {
     IonPage,
     IonImg,
   },
-  data(){
-    return{
-     logo: "../../assets/bg/logo.png"
-    }
-  }
+  data() {
+    return {
+      logo: "../../assets/bg/logo.png",
+    };
+  },
 };
-
 </script>
 
 
 <style lang="scss" scoped>
 ion-content {
   --background: url("/assets/bg/bg.gif") no-repeat cover fixed center;
-  background: url("/assets/bg/bg.gif") no-repeat fixed center; 
+  background: url("/assets/bg/bg.gif") no-repeat fixed center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -96,11 +104,12 @@ ion-searchbar {
   height: 150px;
   margin: 0 0 100px 0;
 }
-.button {
-  margin-bottom: 15px;
+ion-button {
+  height: 50px;
+  margin-top: 20px;
 }
-.button2 {
-  margin-top: 35px;
+.buttonlogin {
+    margin-right: 50px;
+    margin-left: 50px;
 }
-
 </style>

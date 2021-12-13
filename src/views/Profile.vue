@@ -5,26 +5,19 @@
         <ion-buttons slot="start" class="menu">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-img :src="logo" class="logo"></ion-img>
-        <div class="button">
-        <ion-button size="large" expand="full" fill="outline">Landlord</ion-button>
-        </div>
-        <div class="button2">
-        <ion-button size="large" expand="full" fill="outline">Student</ion-button>
-        </div>
       </div>
+  <ion-item class="profile">
+    <ion-avatar slot="start">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
+    </ion-avatar>
+    <ion-label>Item Avatar</ion-label>
+  </ion-item>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import {
-  IonButtons,
-  IonContent,
-  IonMenuButton,
-  IonPage,
-  IonImg,
-} from "@ionic/vue";
+import { IonButtons, IonContent, IonMenuButton, IonPage } from "@ionic/vue";
 
 export default {
   name: "Folder",
@@ -33,22 +26,20 @@ export default {
     IonContent,
     IonMenuButton,
     IonPage,
-    IonImg,
   },
-  data(){
-    return{
-     logo: "../../assets/bg/logo.png"
-    }
-  }
+  data() {
+    return {
+      profile: "../../assets/bg/logo.png",
+    };
+  },
 };
-
 </script>
 
 
 <style lang="scss" scoped>
 ion-content {
-  --background: url("/assets/bg/bg.gif") no-repeat cover fixed center;
-  background: url("/assets/bg/bg.gif") no-repeat fixed center; 
+  --background: url("/assets/bg/bg.png") no-repeat cover fixed center;
+  background: url("/assets/bg/bg.png") no-repeat fixed center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -92,15 +83,11 @@ ion-searchbar {
   margin: 0 0 50px 0;
   display: block;
 }
-.logo {
-  height: 150px;
-  margin: 0 0 100px 0;
+.profile {
+    margin-top: 10px;
 }
-.button {
-  margin-bottom: 15px;
+ion-button {
+  height: 50px;
+  margin-top: 20px;
 }
-.button2 {
-  margin-top: 35px;
-}
-
 </style>
