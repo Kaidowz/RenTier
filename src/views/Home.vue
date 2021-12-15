@@ -7,17 +7,17 @@
         </ion-buttons>
         <ion-img :src="logo" class="logo"></ion-img>
         <div class="button">
-        <ion-button size="large" expand="full" fill="outline">Landlord</ion-button>
+        <ion-button @click="Login" size="large" expand="full" class="homebutton">Landlord</ion-button>
         </div>
         <div class="button2">
-        <ion-button size="large" expand="full" fill="outline">Student</ion-button>
+        <ion-button @click="Bhlist" size="large" expand="full" class="homebutton">Student</ion-button>
         </div>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import {
   IonButtons,
   IonContent,
@@ -26,7 +26,7 @@ import {
   IonImg,
 } from "@ionic/vue";
 
-export default {
+export default ({
   name: "Folder",
   components: {
     IonButtons,
@@ -38,17 +38,25 @@ export default {
   data(){
     return{
      logo: "../../assets/bg/logo.png"
+    };
+  },
+  methods: {
+    Login(){
+      this.$router.push("/login");
+    },
+    Bhlist(){
+      this.$router.push("/bhlist");
     }
   }
-};
-
+  
+});
 </script>
 
 
 <style lang="scss" scoped>
 ion-content {
-  --background: url("/assets/bg/bg.gif") no-repeat cover fixed center;
-  background: url("/assets/bg/bg.gif") no-repeat fixed center; 
+  --background: url("/assets/bg/bghome.jpg") no-repeat cover fixed center;
+  background: url("/assets/bg/bghome.jpg") no-repeat fixed center; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -102,5 +110,13 @@ ion-searchbar {
 .button2 {
   margin-top: 35px;
 }
+
+.homebutton {
+  --background: #444444;
+  color: #ffffff;
+  border: none;
+}
+
+
 
 </style>

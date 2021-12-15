@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "RenTier",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
